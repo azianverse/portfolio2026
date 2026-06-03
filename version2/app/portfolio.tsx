@@ -9,6 +9,7 @@ import { Canvas } from "@react-three/fiber";
 import Lanyard from "../components/Lanyard";
 import BorderGlow from "../components/BorderGlow";
 import Link from "next/link";
+import { gameProjects as importedGameProjects } from "./data/gameProjects";
 
 const ACCENT = "#FF69B4";
 const ACCENT2 = "#e61212";
@@ -152,43 +153,8 @@ const projects: Project[] = [
   },
 ];
 
-// ── Game projects — exported so game detail pages can import them ─────────────
-export const gameProjects: GameProject[] = [
-  {
-    id: 1,
-    slug: "juander-quiz",
-    title: "JuanDerQuiz",
-    shortDesc: "An interactive 2D educational quiz game exploring the history, culture, and landmarks of Dagupan City.",
-    desc: "JuanDer Quiz is an educational 2D game developed under the JuanDerQuest platform, designed to transform local history learning into an engaging gamified experience. The game features a time-based multiple-choice system where accuracy and response speed directly influence boss encounters via a heart-based health mechanic. It incorporates conditional programming logic, visual feedback, and a performance-based grading system to assess learning outcomes.",
-    genre: "Educational Quiz",
-    tags: ["2D", "Educational", "Quiz Game", "Single-player", "Gamification"],
-    tools: ["Godot Engine", "GDScript"],
-    engine: "Godot Engine",
-    status: "Completed",
-    year: "2026",
-    thumbnail: null,
-    gallery: [null, null, null, null],
-    videoUrl: null,
-    accent: "#22c55e",
-  },
-  {
-    id: 2,
-    slug: "heritage-quest",
-    title: "Heritage Quest",
-    shortDesc: "An educational quiz game exploring Dagupan's cultural history through interactive storytelling and trivia.",
-    desc: "Heritage Quest is a narrative-driven educational game built to preserve and promote local Dagupan heritage. Players explore historical landmarks through dialogue trees, collect artifact cards, and answer trivia challenges to unlock story chapters. Designed with accessibility in mind — large text, high contrast UI, and keyboard-navigable menus.",
-    genre: "Educational Quiz",
-    tags: ["Educational", "Quiz Game", "Narrative", "Cultural", "2D"],
-    tools: ["Figma", "VS Code", "ibisPaint X"],
-    engine: "Custom (Web)",
-    status: "Prototype",
-    year: "2024",
-    thumbnail: null,
-    gallery: [null, null, null, null],
-    videoUrl: null,
-    accent: "#a855f7",
-  },
-];
+// ── Game projects — imported from data file and exported so game detail pages can import them ─────────────
+export const gameProjects: GameProject[] = importedGameProjects;
 
 const techStack: TechStackItem[] = [
   { name: "Adobe Illustrator", icon: "https://www.adobe.com/content/dam/cc/icons/ai.svg", cat: "Design" },

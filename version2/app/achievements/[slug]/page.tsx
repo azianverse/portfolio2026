@@ -387,7 +387,7 @@ export default function AchievementDetailPage({ params }: { params: Promise<{ sl
             display: "flex", alignItems: "center", gap: 8,
             fontFamily: "'Syne', sans-serif", fontWeight: 700,
           }}>
-            <div style={{ width: 20, height: 1, background: a.accent }} /> Gallery
+            <div style={{ width: 20, height: 1, background: a.accent }} /> Behind The Scenes
           </div>
           <div style={{
             display: "grid",

@@ -1,6 +1,7 @@
 import jdqPrev1 from "./assets/jdq_prev1.png";
 import jdqPrev2 from "./assets/jdq_prev2.png";
 import jdqPrev3 from "./assets/jdq_prev3.png";
+import jdqThumbnail from "./assets/jdq_thumbnail.png";
 
 export interface GameProject {
   id: number;
@@ -32,7 +33,7 @@ export const gameProjects: GameProject[] = [
     engine: "Godot Engine",
     status: "Completed",
     year: "2026",
-    thumbnail: null, // Replace with your image path
+    thumbnail: jdqThumbnail.src,
     gallery: [
         jdqPrev1.src,
         jdqPrev2.src,
@@ -41,22 +42,5 @@ export const gameProjects: GameProject[] = [
     ], 
     videoUrl: null, // Replace with your video URL
     accent: "#22c55e",
-  },
-  {
-    id: 2,
-    slug: "heritage-quest",
-    title: "Heritage Quest",
-    shortDesc: "An educational quiz game exploring Dagupan's cultural history through interactive storytelling and trivia.",
-    desc: "Heritage Quest is a narrative-driven educational game built to preserve and promote local Dagupan heritage. Players explore historical landmarks through dialogue trees, collect artifact cards, and answer trivia challenges to unlock story chapters. Designed with accessibility in mind — large text, high contrast UI, and keyboard-navigable menus.",
-    genre: "Educational Quiz",
-    tags: ["Educational", "Quiz Game", "Narrative", "Cultural", "2D"],
-    tools: ["Figma", "VS Code", "ibisPaint X"],
-    engine: "Custom (Web)",
-    status: "Prototype",
-    year: "2024",
-    thumbnail: null,
-    gallery: [null, null, null, null],
-    videoUrl: null,
-    accent: "#a855f7",
   },
 ];
