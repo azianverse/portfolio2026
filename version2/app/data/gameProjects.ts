@@ -1,6 +1,3 @@
-import jdqPrev1 from "./assets/jdq_prev1.png";
-import jdqPrev2 from "./assets/jdq_prev2.png";
-import jdqPrev3 from "./assets/jdq_prev3.png";
 import jdqThumbnail from "./assets/jdq_thumbnail.png";
 
 export interface GameProject {
@@ -35,9 +32,6 @@ export const gameProjects: GameProject[] = [
     year: "2026",
     thumbnail: jdqThumbnail.src,
     gallery: [
-        jdqPrev1.src,
-        jdqPrev2.src,
-        jdqPrev3.src,
         null,
     ], 
     videoUrl: null, // Replace with your video URL
