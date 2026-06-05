@@ -583,7 +583,7 @@ function Projects() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3rem", flexWrap: "wrap", gap: "1.5rem" }}>
           <div>
             <SectionLabel>Selected Work</SectionLabel>
-            <SectionTitle style={{ marginBottom: 8 }}>My Projects.</SectionTitle>
+            <SectionTitle style={{ marginBottom: 8 }}>My Designs.</SectionTitle>
             <p style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", minHeight: "1.2em" }}>
               {filter !== "all" ? `Showing ${filtered.length} of ${projects.length}` : ""}
             </p>
