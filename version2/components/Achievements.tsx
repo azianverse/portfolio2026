@@ -85,14 +85,14 @@ export const achievements: Achievement[] = [
   // ── School Achievements ────────────────────────────────────────────────
   {
     id: 3,
-    slug: "graphic-artist-jcpsc",
+    slug: "graphic-artist",
     category: "school",
     title: "Graphic Artist",
     event: "Computer Science and Information Technology Society (CSITS)",
     place: "Member / Officer",
     placeRank: 0,
     date: "2022 – Present",
-    shortDesc: "Served as Graphic Artist for the campus IT organization, producing all visual media.",
+    shortDesc: "Served as Graphic Artist for the campus IT/CS organization, producing all visual media.",
     desc: "Being the Graphic Artist of CSITS was where everything clicked for me. I was responsible for every piece of visual communication the organization put out — from social media pubmats to event banners to merchandise. Over the years, I developed a personal design language that balanced professionalism with creativity. This role is where I grew from someone who liked making things look nice into someone who understood visual communication at a strategic level.",
     thumbnail: null,
     gallery: [null, null, null, null],

@@ -804,45 +804,134 @@ function Games() {
 // ── TECH STACK ────────────────────────────────────────────────────────────────
 
 function Stack() {
-  const cats: TechStackItem["cat"][] = ["Design", "Dev", "Game Dev", "Security"];
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setAnimated(true); },
+      { threshold: 0.2 }
+    );
+    const el = document.getElementById("stack");
+    if (el) observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const designTools = [
+    { name: "Canva",              icon: "https://www.google.com/s2/favicons?domain=canva.com&sz=64",          percent: 100 },
+    { name: "ibisPaint X",        icon: "https://www.google.com/s2/favicons?domain=ibispaint.com&sz=64",      percent: 100 },
+    { name: "Adobe Illustrator",  icon: "https://www.adobe.com/content/dam/cc/icons/ai.svg",                  percent: 75  },
+    { name: "Photoshop",          icon: "https://www.adobe.com/content/dam/cc/icons/psicon.svg",               percent: 75  },
+  ];
+
   return (
     <section id="stack" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.01)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <SectionLabel>Tech Stack</SectionLabel>
-        <SectionTitle><span style={{ color: ACCENT }}>Tools</span> &<br />Technologies.</SectionTitle>
+        <SectionTitle><span style={{ color: ACCENT }}>Design</span> Tools<br />&amp; Proficiency.</SectionTitle>
 
-        {cats.map(cat => {
-          const tools = techStack.filter(t => t.cat === cat);
-          const catColors: Record<TechStackItem["cat"], string> = { Design: ACCENT3, Dev: ACCENT2, "Game Dev": ACCENT, Security: "#ef4444" };
-          const col = catColors[cat];
-          return (
-            <div key={cat} style={{ marginBottom: "3rem" }}>
-              <div style={{ fontSize: "0.65rem", letterSpacing: "0.25em", textTransform: "uppercase", color: col, marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: 8 }}>
-                <div style={{ width: 20, height: 1, background: col }} /> {cat}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(480px, 1fr))",
+          gap: "1.2rem",
+          marginTop: "3rem",
+        }}>
+          {designTools.map(({ name, icon, percent }, i) => (
+            <div key={name} style={{
+              padding: "1.6rem 2rem",
+              background: "rgba(255,255,255,0.03)",
+              border: `1px solid ${ACCENT}18`,
+              borderRadius: 16,
+              transition: "all 0.3s",
+              animationDelay: `${i * 80}ms`,
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = `${ACCENT}08`;
+              e.currentTarget.style.borderColor = `${ACCENT}44`;
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = "rgba(255,255,255,0.03)";
+              e.currentTarget.style.borderColor = `${ACCENT}18`;
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+            >
+              {/* Top row: icon + name + percent */}
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: "1rem" }}>
+                <div style={{
+                  width: 38, height: 38, borderRadius: 10,
+                  background: "rgba(255,255,255,0.06)",
+                  border: `1px solid ${ACCENT}22`,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  flexShrink: 0,
+                }}>
+                  <img src={icon} alt={name} style={{ width: 22, height: 22, objectFit: "contain", borderRadius: 4 }} />
+                </div>
+
+                <span style={{
+                  flex: 1,
+                  fontFamily: "'Syne', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.9rem",
+                  color: "#fff",
+                  letterSpacing: "0.02em",
+                }}>
+                  {name}
+                </span>
+
+                <span style={{
+                  fontFamily: "'Syne', sans-serif",
+                  fontWeight: 800,
+                  fontSize: "1.1rem",
+                  color: ACCENT,
+                  letterSpacing: "-0.02em",
+                  minWidth: 46,
+                  textAlign: "right",
+                }}>
+                  {animated ? percent : 0}%
+                </span>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))", gap: "0.8rem" }}>
-                {tools.map(({ name, icon, CustomIcon }) => (
-                  <div key={name} style={{
-                    padding: "1rem", background: "rgba(255,255,255,0.03)",
-                    border: `1px solid ${col}18`, borderRadius: 12,
-                    display: "flex", alignItems: "center", gap: 10, transition: "all 0.2s",
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.background = `${col}0d`; e.currentTarget.style.borderColor = `${col}44`; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.03)"; e.currentTarget.style.borderColor = `${col}18`; }}
-                  >
-                    {icon ? <img src={icon} alt={name} style={{ width: 22, height: 22, borderRadius: 4, objectFit: "contain" }} />
-                          : CustomIcon ? <CustomIcon size={22} color={col} /> : null}
-                    <span style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.6)", fontWeight: 400, lineHeight: 1.3 }}>{name}</span>
-                  </div>
-                ))}
+
+              {/* Progress bar track */}
+              <div style={{
+                width: "100%",
+                height: 6,
+                background: "rgba(255,255,255,0.07)",
+                borderRadius: 999,
+                overflow: "hidden",
+              }}>
+                <div style={{
+                  height: "100%",
+                  width: animated ? `${percent}%` : "0%",
+                  background: percent === 100
+                    ? `linear-gradient(90deg, ${ACCENT}, #ff1493)`
+                    : `linear-gradient(90deg, ${ACCENT3}, ${ACCENT})`,
+                  borderRadius: 999,
+                  transition: `width 1.2s cubic-bezier(0.4, 0, 0.2, 1) ${i * 120}ms`,
+                  boxShadow: percent === 100
+                    ? `0 0 12px ${ACCENT}60`
+                    : `0 0 12px ${ACCENT3}40`,
+                }} />
+              </div>
+
+              {/* Level label */}
+              <div style={{
+                marginTop: 8,
+                fontSize: "0.6rem",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: percent === 100 ? ACCENT : ACCENT3,
+                fontFamily: "'Syne', sans-serif",
+              }}>
+                {percent === 100 ? "Expert · Daily Driver" : "Proficient · Regular Use"}
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+         
 
 // ── CONTACT ───────────────────────────────────────────────────────────────────
 
