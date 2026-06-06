@@ -190,7 +190,8 @@ function VideoPreview({ url, accent }: { url: string | null; accent: string }) {
         <div style={{
           fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase",
           color: "rgba(255,255,255,0.15)", position: "relative", zIndex: 1,
-        }}>Placeholder — add videoUrl to gameProjects data</div>
+        }}>
+        </div>
       )}
     </div>
   );

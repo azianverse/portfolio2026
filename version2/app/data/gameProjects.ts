@@ -1,6 +1,9 @@
 import jdqPrev1 from "./assets/jdq_prev1.png";
 import jdqPrev2 from "./assets/jdq_prev2.png";
 import jdqPrev3 from "./assets/jdq_prev3.png";
+import jdqPrev4 from "./assets/jdq_prev4.png";
+import jdqPrev5 from "./assets/jdq_prev5.png";
+import jdqPrev6 from "./assets/jdq_prev6.png";
 import jdqThumbnail from "./assets/jdq_thumbnail.png";
 
 export interface GameProject {
@@ -38,7 +41,9 @@ export const gameProjects: GameProject[] = [
         jdqPrev1.src,
         jdqPrev2.src,
         jdqPrev3.src,
-        null,
+        jdqPrev4.src,
+        jdqPrev5.src,
+        jdqPrev6.src,
     ], 
     videoUrl: null, // Replace with your video URL
     accent: "#22c55e",

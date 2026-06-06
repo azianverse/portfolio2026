@@ -91,19 +91,6 @@ interface ProjectModalProps {
   onNext: () => void;
 }
 
-// ── DATA ──────────────────────────────────────────────────────────────────────
-
-const timeline: TimelineItem[] = [
-  { year: "2022", type: "education", icon: BookOpen, color: "#0ea5e9", title: "Started IT Journey", desc: "Enrolled in Information Technology at Universidad de Dagupan. Discovered the intersection of design and code." },
-  { year: "2022", type: "design", icon: Palette, color: "#a855f7", title: "First Design Role", desc: "Joined campus org as graphic designer. Created publication materials, event branding, and social media assets for 1,000+ student community." },
-  { year: "2023", type: "education", icon: BookOpen, color: "#0ea5e9", title: "Seminars & Certifications", desc: "Attended tech seminars covering networking fundamentals, cybersecurity basics, and web development frameworks." },
-  { year: "2023", type: "gamedev", icon: Gamepad2, color: "#00f5d4", title: "Game Dev Exploration", desc: "Began studying sprite animation, character design mechanics, and game asset pipelines. Created first character sprite sheets." },
-  { year: "2023", type: "competition", icon: Trophy, color: "#f59e0b", title: "CodeChella Event Design", desc: "Led full visual identity for CodeChella — a tech-meets-festival booth event. Designed pubmats, banners, and merchandise." },
-  { year: "2024", type: "competition", icon: Shield, color: "#ef4444", title: "Hackathon Competitor", desc: "Competed in Hackathon and Hack4Gov, applying problem-solving and security thinking to real-world civic tech challenges." },
-  { year: "2024", type: "dev", icon: Code2, color: "#00f5d4", title: "Software & Dev Projects", desc: "Built heritage preservation apps and Laravel-based systems. Bridged UI/UX design with backend development." },
-  { year: "2024", type: "education", icon: Award, color: "#0ea5e9", title: "Advanced Certifications", desc: "Completed coursework in networking protocols, cybersecurity practices, and full-stack development concepts." },
-];
-
 // ── Design & Print projects only ─────────────────────────────────────────────
 const projects: Project[] = [
   {
@@ -144,21 +131,30 @@ const projects: Project[] = [
   },
   {
     id: 5, category: "design",
-    title: "Mascot Design",
-    desc: "Original mascot character design for campus organization branding. From concept sketches to final vector with usage guidelines.",
-    tags: ["Branding", "Mascot", "Illustration"],
+    title: "Department Marketing",
+    desc: "Description soon.",
+    tags: ["Digital", "Marketing", "Illustration"],
     tools: ["ibisPaint X", "Canva"],
-    img: null,
+    img: "assets/projects/digital/6.png",
     accent: "#a855f7",
   },
+  {
+    id: 6, category: "design",
+    title: "Dean's List Announcement",
+    desc: "Description soon.",
+    tags: ["Digital", "Poster", "Event"],
+    tools: ["Canva", "Photoshop", "Illustrator"],
+    img: "assets/projects/digital/9.png",
+    accent: "#f59e0b",
+  }
 ];
 
 // ── Game projects — imported from data file and exported so game detail pages can import them ─────────────
 export const gameProjects: GameProject[] = importedGameProjects;
 
 const techStack: TechStackItem[] = [
-  { name: "Adobe Illustrator", icon: "https://www.adobe.com/content/dam/cc/icons/ai.svg", cat: "Design" },
-  { name: "Photoshop", icon: "https://www.adobe.com/content/dam/cc/icons/psicon.svg", cat: "Design" },
+  { name: "Adobe Illustrator", icon: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg", cat: "Design" },
+  { name: "Photoshop", icon: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg", cat: "Design" },
   { name: "Canva", icon: "https://www.google.com/s2/favicons?domain=canva.com&sz=64", cat: "Design" },
   { name: "ibisPaint X", icon: "https://www.google.com/s2/favicons?domain=ibispaint.com&sz=64", cat: "Design" },
 ];
