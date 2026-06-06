@@ -223,7 +223,7 @@ function SectionTitle({ children, style }: SectionTitleProps) {
 
 function Hero() {
   return (
-    <section id="hero" style={{
+    <section id="hero" className="hero-section" style={{
       minHeight: "100vh", display: "flex", alignItems: "center",
       padding: "0 4rem", position: "relative", overflow: "hidden",
     }}>
@@ -239,7 +239,7 @@ function Hero() {
         whiteSpace: "nowrap", userSelect: "none", pointerEvents: "none", letterSpacing: "-0.05em",
       }}>CREATOR</div>
 
-      <div style={{ position: "relative", zIndex: 2, maxWidth: 780 }}>
+      <div className="hero-content" style={{ position: "relative", zIndex: 2, maxWidth: 780 }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8, marginBottom: "1.8rem",
           padding: "0.35em 1em", border: "2px solid rgba(255, 105, 180,0.3)",
@@ -325,7 +325,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative z-0 w-full h-150 flex justify-center items-center scale-100 origin-center">
+      <div className="hero-lanyard relative z-0 w-full h-150 flex justify-center items-center scale-100 origin-center">
         <Lanyard position={[0, 0, 12]} gravity={[0, -40, 0]} />
       </div>
 
@@ -346,9 +346,9 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" style={{ padding: "8rem 4rem", position: "relative", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section id="about" className="about-section" style={{ padding: "8rem 4rem", position: "relative", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <GlowOrb x="90%" y="20%" color={ACCENT3} size={400} />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center", maxWidth: 1200, margin: "0 auto" }}>
+      <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center", maxWidth: 1200, margin: "0 auto" }}>
         <div>
           <SectionLabel>About</SectionLabel>
           <SectionTitle>Generalist<br /><span style={{ color: ACCENT }}>Creator.</span></SectionTitle>
@@ -377,7 +377,7 @@ function About() {
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+        <div className="about-cards" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
           {[
             {
               icon: Palette, title: "Visual Design",
@@ -479,7 +479,7 @@ function ProjectModal({ project, onClose, onPrev, onNext }: ProjectModalProps) {
         position: "fixed", inset: 0, zIndex: 100,
         background: "rgba(0,0,0,0.88)", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem",
       }}>
-        <div style={{
+        <div className="modal-inner" style={{
           background: "#0a0a12", border: "1px solid rgba(255,255,255,0.08)",
           borderRadius: 20, width: "100%", maxWidth: 860,
           display: "grid", gridTemplateColumns: "1fr 1fr",
@@ -569,7 +569,7 @@ function Projects() {
   const activeProject = modalIdx !== null ? filtered[modalIdx] : null;
 
   return (
-    <section id="projects" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+    <section id="projects" className="projects-section" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <GlowOrb x="80%" y="60%" color={ACCENT} size={350} />
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3rem", flexWrap: "wrap", gap: "1.5rem" }}>
@@ -594,7 +594,7 @@ function Projects() {
           </div>
         </div>
 
-        <div style={{ columns: 3, columnGap: "1rem" }}>
+        <div className="projects-grid" style={{ columns: 3, columnGap: "1rem" }}>
           {filtered.map((p, i) => (
             <div key={p.id} onClick={() => setModalIdx(i)}
               style={{
@@ -655,7 +655,7 @@ function Games() {
   };
 
   return (
-    <section id="games" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+    <section id="games" className="games-section" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <GlowOrb x="20%" y="50%" color="#00f5d4" size={450} />
       <GlowOrb x="85%" y="20%" color={ACCENT3} size={300} />
 
@@ -666,7 +666,7 @@ function Games() {
         </SectionTitle>
 
         {/* Bento grid — first card spans 2 cols, rest normal */}
-        <div style={{
+        <div className="games-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gridTemplateRows: "auto",
@@ -821,7 +821,7 @@ function Stack() {
         <SectionLabel>Tech Stack</SectionLabel>
         <SectionTitle><span style={{ color: ACCENT }}>Design</span> Tools<br />&amp; Proficiency.</SectionTitle>
 
-        <div style={{
+        <div className="stack-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(480px, 1fr))",
           gap: "1.2rem",
@@ -929,9 +929,9 @@ function Stack() {
 
 function Contact() {
   return (
-    <section id="contact" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+    <section id="contact" className="contact-section" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <GlowOrb x="50%" y="50%" color={ACCENT} size={500} />
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
+      <div className="contact-grid" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
         <div>
           <SectionLabel>Contact</SectionLabel>
           <SectionTitle>Let's Work<br /><span style={{ color: ACCENT }}>Together.</span></SectionTitle>
@@ -968,11 +968,9 @@ function Contact() {
                 e.currentTarget.style.color = "rgba(255,255,255,0.5)";
               }}
             >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/2/24/Github_logo_svg.svg"
-                alt="GitHub"
-                style={{ width: 13, height: 13, filter: "invert(1) brightness(2)", opacity: 0.85 }}
-              />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 499.368" style={{ width: 13, height: 13, fill: "currentColor", flexShrink: 0 }}>
+              <path fillRule="nonzero" d="M256.003 0C114.555 0 0 114.555 0 256.003c0 113.286 73.28 208.961 175.038 242.865 12.796 2.247 17.586-5.433 17.586-12.153 0-6.077-.309-26.225-.309-47.686-64.313 11.844-80.941-15.674-86.058-30.055-2.896-7.37-15.359-30.1-26.269-36.177-8.948-4.808-21.752-16.652-.31-16.961 20.168-.309 34.574 18.564 39.382 26.244 23.038 38.732 59.839 27.828 74.555 21.101 2.227-16.627 8.947-27.828 16.318-34.239-56.968-6.386-116.467-28.471-116.467-126.399 0-27.827 9.907-50.866 26.225-68.787-2.562-6.41-11.51-32.655 2.562-67.853 0 0 21.436-6.72 70.409 26.244 20.483-5.767 42.227-8.638 63.998-8.638 21.751 0 43.52 2.896 63.997 8.638 48.973-33.279 70.39-26.244 70.39-26.244 14.09 35.192 5.117 61.443 2.562 67.853 16.318 17.921 26.244 40.625 26.244 68.787 0 98.237-59.84 119.988-116.801 126.399 9.282 8.014 17.277 23.373 17.277 47.371 0 34.238-.309 61.751-.309 70.389 0 6.721 4.808 14.735 17.586 12.179C438.739 464.964 512 368.955 512 256.003 512 114.555 397.445 0 256.003 0z"/>
+              </svg>
               GitHub
             </a>
             <a
@@ -994,11 +992,9 @@ function Contact() {
                 e.currentTarget.style.color = "rgba(255,255,255,0.5)";
               }}
             >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/5/58/Behance_while_icon.svg"
-                alt="Behance"
-                style={{ width: 13, height: 13, filter: "invert(1) brightness(2)", opacity: 0.85 }}
-              />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 333333" style={{ width: 13, height: 13, fill: "currentColor", flexShrink: 0 }}>
+              <path d="M96656 62252c9824 0 18671 854 26734 2608 8083 1685 14911 4559 20707 8459 5726 3913 10144 9122 13409 15620 3126 6435 4687 14512 4687 24077 0 10352-2331 18935-7037 25848-4748 6896-11646 12500-20898 16935 12622 3642 21937 10021 28187 19076 6244 9122 9246 20055 9246 32929 0 10415-2023 19329-5974 26882-4035 7622-9504 13797-16203 18559-6768 4811-14579 8329-23309 10606-8667 2264-17581 3451-26797 3451l-99407 2V62270l96667 6-12-26v2zm120854 16541h83133v20252l-83133-6V78787v6zm18474 152836c6128 5974 14911 8976 26378 8976 8201 0 15372-2093 21285-6256 5911-4165 9504-8575 10876-13140l35919 6c-5795 17889-14517 30598-26488 38281-11793 7683-26224 11585-42969 11585-11730 0-22200-1902-31643-5610-9437-3772-17311-9037-23955-15957-6441-6896-11516-15096-15102-24736-3520-9559-5327-20183-5327-31638 0-11128 1833-21482 5457-31053 3709-9645 8791-17895 15557-24872 6760-6970 14703-12500 24083-16535 9315-4041 19600-6065 30992-6065 12555 0 23555 2417 32998 7358 9376 4872 17120 11455 23173 19661 6065 8213 10352 17642 13023 28181 2669 10537 3581 21537 2848 33077l-107200-4c0 11646 3913 22791 10083 28699l12 43v-2zm46807-77972c-4811-5333-13085-8268-23037-8268-6522 0-11909 1100-16202 3315-4226 2203-7683 4933-10352 8201-2602 3254-4435 6773-5451 10470-1039 3581-1685 6896-1902 9770l66407-6c-978-10407-4559-18092-9437-23492l-24 12-2-2zm-192011-8606c7998 0 14635-1902 19838-5734 5205-3772 7683-10022 7683-18620 0-4742-848-8728-2541-11793-1746-3057-4041-5474-6963-7159-2872-1748-6114-2941-9947-3587-3708-707-7622-1033-11582-1033H45093v47904h45701l-12 24h-2zm2474 87287c4441 0 8667-394 12610-1317 4035-909 7622-2270 10606-4348 2996-2024 5541-4681 7350-8201 1833-3457 2669-7874 2669-13270 0-10537-3002-18098-8913-22663-5911-4504-13787-6705-23549-6705H45080v56423l48173-6v87z"/>
+              </svg>
               Behance
             </a>
           </div>
@@ -1121,7 +1117,7 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer style={{
+    <footer className="footer-bar" style={{
       padding: "2rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)",
       display: "flex", justifyContent: "space-between", alignItems: "center",
       fontSize: "0.7rem", color: "rgba(255,255,255,0.3)", letterSpacing: "0.08em", flexWrap: "wrap", gap: "1rem",
@@ -1165,6 +1161,45 @@ export default function App() {
         ::-webkit-scrollbar-thumb { background: ${ACCENT}; border-radius: 2px; }
         @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4);} 50%{box-shadow:0 0 0 6px rgba(34,197,94,0);} }
         .overlay:hover { opacity: 1 !important; }
+
+        @media (max-width: 768px) {
+          /* Hero */
+          .hero-section { padding: 6rem 1.5rem 3rem !important; flex-direction: column !important; }
+          .hero-content { max-width: 100% !important; }
+          .hero-lanyard { display: none !important; }
+
+          /* About */
+          .about-section { padding: 5rem 1.5rem !important; }
+          .about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+          .about-cards { grid-template-columns: 1fr 1fr !important; }
+
+          /* Projects */
+          .projects-section { padding: 5rem 1.5rem !important; }
+          .projects-grid { columns: 1 !important; }
+
+          /* Modal */
+          .modal-inner { grid-template-columns: 1fr !important; max-height: 95vh !important; overflow-y: auto !important; }
+          .modal-image { min-height: 200px !important; }
+
+          /* Games */
+          .games-section { padding: 5rem 1.5rem !important; }
+          .games-grid { grid-template-columns: 1fr !important; }
+          .games-grid > * { grid-column: span 1 !important; }
+
+          /* Stack */
+          .stack-section { padding: 5rem 1.5rem !important; }
+          .stack-grid { grid-template-columns: 1fr !important; }
+
+          /* Contact */
+          .contact-section { padding: 5rem 1.5rem !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+
+          /* Footer */
+          .footer-bar { padding: 2rem 1.5rem !important; flex-direction: column !important; align-items: flex-start !important; gap: 1rem !important; }
+
+          /* Section titles */
+          h1, h2 { word-break: break-word; }
+        }
       `}</style>
       <SplashCursor
         DENSITY_DISSIPATION={6}
