@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, type CSSProperties, type ComponentType, type ReactNode } from "react";
+import React, { useState, useEffect, type CSSProperties, type ComponentType, type ReactNode } from "react";
 import { Code2, Palette, Shield, Gamepad2, ChevronRight, ExternalLink, Mail, MapPin, Phone, Download, X, ChevronLeft, Zap, Award, BookOpen, Trophy, Monitor, Layers, Globe, Lock, Cpu, Play, ArrowRight } from "lucide-react";
 import SplashCursor from "../components/SplashCursor";
 import Nav from "../components/Nav";
@@ -160,15 +160,7 @@ const techStack: TechStackItem[] = [
   { name: "Adobe Illustrator", icon: "https://www.adobe.com/content/dam/cc/icons/ai.svg", cat: "Design" },
   { name: "Photoshop", icon: "https://www.adobe.com/content/dam/cc/icons/psicon.svg", cat: "Design" },
   { name: "Canva", icon: "https://www.google.com/s2/favicons?domain=canva.com&sz=64", cat: "Design" },
-  { name: "Figma", icon: "https://www.google.com/s2/favicons?domain=figma.com&sz=64", cat: "Design" },
   { name: "ibisPaint X", icon: "https://www.google.com/s2/favicons?domain=ibispaint.com&sz=64", cat: "Design" },
-  { name: "PHP / Laravel", icon: "https://www.google.com/s2/favicons?domain=laravel.com&sz=64", cat: "Dev" },
-  { name: "JavaScript", icon: "https://www.google.com/s2/favicons?domain=javascript.info&sz=64", cat: "Dev" },
-  { name: "GitHub", icon: "https://www.google.com/s2/favicons?domain=github.com&sz=64", cat: "Dev" },
-  { name: "Blender", icon: "https://www.google.com/s2/favicons?domain=blender.org&sz=64", cat: "Game Dev" },
-  { name: "Networking", icon: null, cat: "Security", CustomIcon: Globe },
-  { name: "Cyber Security", icon: null, cat: "Security", CustomIcon: Lock },
-  { name: "Linux / CLI", icon: null, cat: "Security", CustomIcon: Cpu },
 ];
 
 const catConfig: Record<FilterKey, { label: string; color: string }> = {
@@ -818,9 +810,9 @@ function Stack() {
 
   const designTools = [
     { name: "Canva",              icon: "https://www.google.com/s2/favicons?domain=canva.com&sz=64",          percent: 100 },
-    { name: "ibisPaint X",        icon: "https://www.google.com/s2/favicons?domain=ibispaint.com&sz=64",      percent: 100 },
-    { name: "Adobe Illustrator",  icon: "https://www.adobe.com/content/dam/cc/icons/ai.svg",                  percent: 75  },
-    { name: "Photoshop",          icon: "https://www.adobe.com/content/dam/cc/icons/psicon.svg",               percent: 75  },
+    { name: "ibisPaint X",        icon: "https://upload.wikimedia.org/wikipedia/commons/8/80/IbisPaint_X_%28App_Icon%29.svg",      percent: 100 },
+    { name: "Adobe Illustrator",  icon: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",                  percent: 75  },
+    { name: "Photoshop",          icon: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg",               percent: 75  },
   ];
 
   return (
@@ -955,61 +947,170 @@ function Contact() {
               <span style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.6)" }}>{val}</span>
             </div>
           ))}
+
           <div style={{ display: "flex", gap: 8, marginTop: "2rem" }}>
-            {[{ icon: ExternalLink, href: "#", label: "GitHub" }, { icon: Monitor, href: "#", label: "Behance" }].map(({ icon: Icon, href, label }) => (
-              <a key={label} href={href} style={{
+            <a
+              href="https://github.com/azianverse"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
                 display: "flex", alignItems: "center", gap: 6, padding: "0.5em 1em",
                 border: "1px solid rgba(255,255,255,0.12)", borderRadius: 999,
                 color: "rgba(255,255,255,0.5)", fontSize: "0.7rem", letterSpacing: "0.1em",
                 textDecoration: "none", transition: "all 0.2s",
               }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = ACCENT; e.currentTarget.style.color = ACCENT; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; e.currentTarget.style.color = "rgba(255,255,255,0.5)"; }}
-              ><Icon size={13} /> {label}</a>
-            ))}
+              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                e.currentTarget.style.borderColor = ACCENT;
+                e.currentTarget.style.color = ACCENT;
+              }}
+              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
+                e.currentTarget.style.color = "rgba(255,255,255,0.5)";
+              }}
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/24/Github_logo_svg.svg"
+                alt="GitHub"
+                style={{ width: 13, height: 13, filter: "invert(1) brightness(2)", opacity: 0.85 }}
+              />
+              GitHub
+            </a>
+            <a
+              href="https://www.behance.net/clrssgfx"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex", alignItems: "center", gap: 6, padding: "0.5em 1em",
+                border: "1px solid rgba(255,255,255,0.12)", borderRadius: 999,
+                color: "rgba(255,255,255,0.5)", fontSize: "0.7rem", letterSpacing: "0.1em",
+                textDecoration: "none", transition: "all 0.2s",
+              }}
+              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                e.currentTarget.style.borderColor = ACCENT;
+                e.currentTarget.style.color = ACCENT;
+              }}
+              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
+                e.currentTarget.style.color = "rgba(255,255,255,0.5)";
+              }}
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/58/Behance_while_icon.svg"
+                alt="Behance"
+                style={{ width: 13, height: 13, filter: "invert(1) brightness(2)", opacity: 0.85 }}
+              />
+              Behance
+            </a>
           </div>
         </div>
 
-        <form style={{ display: "flex", flexDirection: "column", gap: "1rem" }} onSubmit={e => e.preventDefault()}>
+        {/* ── Contact Form ── */}
+        <form
+          style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+          onSubmit={e => {
+            e.preventDefault();
+            const firstName = (document.getElementById("cf-firstname") as HTMLInputElement)?.value || "";
+            const lastName  = (document.getElementById("cf-lastname")  as HTMLInputElement)?.value || "";
+            const email     = (document.getElementById("cf-email")     as HTMLInputElement)?.value || "";
+            const subject   = (document.getElementById("cf-subject")   as HTMLInputElement)?.value || "Portfolio Inquiry";
+            const message   = (document.getElementById("cf-message")   as HTMLTextAreaElement)?.value || "";
+
+            const body = encodeURIComponent(
+              `From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`
+            );
+            window.location.href = `mailto:clarissagutlay.png@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+          }}
+        >
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-            {["First Name", "Last Name"].map(label => (
-              <div key={label} style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>{label}</label>
-                <input placeholder={label === "First Name" ? "John" : "Doe"} style={{
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>First Name</label>
+              <input
+                id="cf-firstname"
+                placeholder="John"
+                style={{
                   background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
                   color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none",
-                }} onFocus={e => e.target.style.borderColor = ACCENT} onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"} />
-              </div>
-            ))}
+                }}
+                onFocus={e => e.target.style.borderColor = ACCENT}
+                onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
+              />
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>Last Name</label>
+              <input
+                id="cf-lastname"
+                placeholder="Doe"
+                style={{
+                  background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
+                  color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none",
+                }}
+                onFocus={e => e.target.style.borderColor = ACCENT}
+                onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
+              />
+            </div>
           </div>
-          {[{ label: "Email", type: "email", ph: "john@example.com" }, { label: "Subject", type: "text", ph: "Project Inquiry" }].map(({ label, type, ph }) => (
-            <div key={label} style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>{label}</label>
-              <input type={type} placeholder={ph} style={{
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>Email</label>
+            <input
+              id="cf-email"
+              type="email"
+              placeholder="john@example.com"
+              style={{
                 background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
                 color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none",
-              }} onFocus={e => e.target.style.borderColor = ACCENT} onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"} />
-            </div>
-          ))}
+              }}
+              onFocus={e => e.target.style.borderColor = ACCENT}
+              onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
+            />
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>Subject</label>
+            <input
+              id="cf-subject"
+              type="text"
+              placeholder="Project Inquiry"
+              style={{
+                background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
+                color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none",
+              }}
+              onFocus={e => e.target.style.borderColor = ACCENT}
+              onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
+            />
+          </div>
+
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>Message</label>
-            <textarea rows={5} placeholder="Tell me about your project..." style={{
-              background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
-              color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none", resize: "none",
-            }} onFocus={e => e.target.style.borderColor = ACCENT} onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"} />
+            <textarea
+              id="cf-message"
+              rows={5}
+              placeholder="Tell me about your project..."
+              style={{
+                background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
+                color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none", resize: "none",
+              }}
+              onFocus={e => e.target.style.borderColor = ACCENT}
+              onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
+            />
           </div>
-          <button type="submit" style={{
-            alignSelf: "flex-start", padding: "0.85em 2.2em",
-            background: `linear-gradient(135deg, ${ACCENT}, #ff1493)`,
-            color: "#000", fontSize: "0.78rem", letterSpacing: "0.15em", textTransform: "uppercase",
-            fontFamily: "'Syne', sans-serif", fontWeight: 700, cursor: "pointer", borderRadius: 6,
-            transition: "all 0.3s ease",
-            boxShadow: `0 0 20px ${ACCENT}40, 0 0 40px ${ACCENT}20`,
-            border: `1px solid ${ACCENT}80`,
-          }}
-          onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 0 30px ${ACCENT}60, 0 0 60px ${ACCENT}40`; e.currentTarget.style.transform = "translateY(-2px)"; }}
-          onMouseLeave={e => { e.currentTarget.style.boxShadow = `0 0 20px ${ACCENT}40, 0 0 40px ${ACCENT}20`; e.currentTarget.style.transform = "translateY(0)"; }}
-          >Send Message →</button>
+
+          <button
+            type="submit"
+            style={{
+              alignSelf: "flex-start", padding: "0.85em 2.2em",
+              background: `linear-gradient(135deg, ${ACCENT}, #ff1493)`,
+              color: "#000", fontSize: "0.78rem", letterSpacing: "0.15em", textTransform: "uppercase",
+              fontFamily: "'Syne', sans-serif", fontWeight: 700, cursor: "pointer", borderRadius: 6,
+              transition: "all 0.3s ease",
+              boxShadow: `0 0 20px ${ACCENT}40, 0 0 40px ${ACCENT}20`,
+              border: `1px solid ${ACCENT}80`,
+            }}
+            onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 0 30px ${ACCENT}60, 0 0 60px ${ACCENT}40`; e.currentTarget.style.transform = "translateY(-2px)"; }}
+            onMouseLeave={e => { e.currentTarget.style.boxShadow = `0 0 20px ${ACCENT}40, 0 0 40px ${ACCENT}20`; e.currentTarget.style.transform = "translateY(0)"; }}
+          >
+            Send Message →
+          </button>
         </form>
       </div>
     </section>
