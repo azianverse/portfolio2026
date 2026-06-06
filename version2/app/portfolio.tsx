@@ -848,7 +848,7 @@ function Stack() {
             }}
             >
               {/* Top row: icon + name + percent */}
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: "1rem" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
                 <div style={{
                   width: 38, height: 38, borderRadius: 10,
                   background: "rgba(255,255,255,0.06)",
@@ -1163,11 +1163,12 @@ export default function App() {
         .overlay:hover { opacity: 1 !important; }
 
         @media (max-width: 768px) {
+        html, body { overflow-x: hidden !important; max-width: 100vw !important; }
+          section { max-width: 100vw !important; overflow-x: hidden !important; }
           /* Hero */
-          .hero-section { padding: 6rem 1.5rem 3rem !important; flex-direction: column !important; }
-          .hero-content { max-width: 100% !important; }
-          .hero-lanyard { display: none !important; }
-
+          .hero-section { padding: 6rem 1.5rem 3rem !important; flex-direction: column !important; align-items: flex-start !important; width: 100% !important; overflow: hidden !important; }
+          .hero-content { max-width: 100% !important; width: 100% !important; }
+          .hero-lanyard { display: none !important; }}
           /* About */
           .about-section { padding: 5rem 1.5rem !important; }
           .about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }

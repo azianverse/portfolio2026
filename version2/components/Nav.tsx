@@ -214,7 +214,7 @@ export default function Nav() {
           justify-content: center;
           flex-direction: column;
           gap: 5px;
-          margin-left: 0.7rem;
+          margin-left: auto;
           width: 36px;
           height: 36px;
           background: rgba(255,255,255,0.06);
@@ -303,9 +303,9 @@ export default function Nav() {
         /* ── Responsive ── */
         @media (max-width: 620px) {
           .nav-links      { display: none !important; }
-          .nav-available  { display: none !important; }
-          .nav-hamburger  { display: flex !important; }
-          .nav-pill       { padding-right: 0.35rem; }
+          .nav-available  { display: none !important; width: 0 !important; margin: 0 !important; padding: 0 !important; }
+          .nav-hamburger  { display: flex !important; margin-left: auto !important; }
+          .nav-pill       { padding-right: 0.45rem; justify-content: space-between; }
         }
       `}</style>
 
@@ -317,6 +317,17 @@ export default function Nav() {
           <a href="#hero" className="nav-logo">
             <img src="/assets/logo.png" alt="CA logo" style={{ height: 26, width: "auto", display: "block" }} />
           </a>
+
+          {/* Hamburger — mobile only */}
+          <button
+            className="nav-hamburger"
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle navigation menu"
+          >
+            <span className={`hbar hbar-top${menuOpen ? " open" : ""}`} />
+            <span className={`hbar hbar-mid${menuOpen ? " open" : ""}`} />
+            <span className={`hbar hbar-bot${menuOpen ? " open" : ""}`} />
+          </button>
 
           {/* Spacer — pushes everything after it to the right */}
           <div className="nav-spacer" />
@@ -339,17 +350,6 @@ export default function Nav() {
             <span className="pulse-dot" />
             Available
           </div>
-
-          {/* Hamburger — mobile only */}
-          <button
-            className="nav-hamburger"
-            onClick={() => setMenuOpen(o => !o)}
-            aria-label="Toggle navigation menu"
-          >
-            <span className={`hbar hbar-top${menuOpen ? " open" : ""}`} />
-            <span className={`hbar hbar-mid${menuOpen ? " open" : ""}`} />
-            <span className={`hbar hbar-bot${menuOpen ? " open" : ""}`} />
-          </button>
         </div>
       </div>
 
