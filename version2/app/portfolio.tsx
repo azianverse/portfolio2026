@@ -223,7 +223,7 @@ function SectionTitle({ children, style }: SectionTitleProps) {
 
 function Hero() {
   return (
-    <section id="hero" className="hero-section" style={{
+    <section id="hero" style={{
       minHeight: "100vh", display: "flex", alignItems: "center",
       padding: "0 4rem", position: "relative", overflow: "hidden",
     }}>
@@ -239,7 +239,7 @@ function Hero() {
         whiteSpace: "nowrap", userSelect: "none", pointerEvents: "none", letterSpacing: "-0.05em",
       }}>CREATOR</div>
 
-      <div className="hero-content" style={{ position: "relative", zIndex: 2, maxWidth: 780 }}>
+      <div style={{ position: "relative", zIndex: 2, maxWidth: 780 }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8, marginBottom: "1.8rem",
           padding: "0.35em 1em", border: "2px solid rgba(255, 105, 180,0.3)",
@@ -325,7 +325,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="hero-lanyard relative z-0 w-full h-150 flex justify-center items-center scale-100 origin-center">
+      <div className="relative z-0 w-full h-150 flex justify-center items-center scale-100 origin-center">
         <Lanyard position={[0, 0, 12]} gravity={[0, -40, 0]} />
       </div>
 
@@ -346,9 +346,9 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="about-section" style={{ padding: "8rem 4rem", position: "relative", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section id="about" style={{ padding: "8rem 4rem", position: "relative", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <GlowOrb x="90%" y="20%" color={ACCENT3} size={400} />
-      <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center", maxWidth: 1200, margin: "0 auto" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center", maxWidth: 1200, margin: "0 auto" }}>
         <div>
           <SectionLabel>About</SectionLabel>
           <SectionTitle>Generalist<br /><span style={{ color: ACCENT }}>Creator.</span></SectionTitle>
@@ -377,7 +377,7 @@ function About() {
           </div>
         </div>
 
-        <div className="about-cards" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
           {[
             {
               icon: Palette, title: "Visual Design",
@@ -479,7 +479,7 @@ function ProjectModal({ project, onClose, onPrev, onNext }: ProjectModalProps) {
         position: "fixed", inset: 0, zIndex: 100,
         background: "rgba(0,0,0,0.88)", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem",
       }}>
-        <div className="modal-inner" style={{
+        <div style={{
           background: "#0a0a12", border: "1px solid rgba(255,255,255,0.08)",
           borderRadius: 20, width: "100%", maxWidth: 860,
           display: "grid", gridTemplateColumns: "1fr 1fr",
@@ -569,7 +569,7 @@ function Projects() {
   const activeProject = modalIdx !== null ? filtered[modalIdx] : null;
 
   return (
-    <section id="projects" className="projects-section" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+    <section id="projects" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <GlowOrb x="80%" y="60%" color={ACCENT} size={350} />
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3rem", flexWrap: "wrap", gap: "1.5rem" }}>
@@ -594,7 +594,7 @@ function Projects() {
           </div>
         </div>
 
-        <div className="projects-grid" style={{ columns: 3, columnGap: "1rem" }}>
+        <div style={{ columns: 3, columnGap: "1rem" }}>
           {filtered.map((p, i) => (
             <div key={p.id} onClick={() => setModalIdx(i)}
               style={{
@@ -655,7 +655,7 @@ function Games() {
   };
 
   return (
-    <section id="games" className="games-section" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+    <section id="games" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <GlowOrb x="20%" y="50%" color="#00f5d4" size={450} />
       <GlowOrb x="85%" y="20%" color={ACCENT3} size={300} />
 
@@ -666,7 +666,7 @@ function Games() {
         </SectionTitle>
 
         {/* Bento grid — first card spans 2 cols, rest normal */}
-        <div className="games-grid" style={{
+        <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gridTemplateRows: "auto",
@@ -821,7 +821,7 @@ function Stack() {
         <SectionLabel>Tech Stack</SectionLabel>
         <SectionTitle><span style={{ color: ACCENT }}>Design</span> Tools<br />&amp; Proficiency.</SectionTitle>
 
-        <div className="stack-grid" style={{
+        <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(480px, 1fr))",
           gap: "1.2rem",
@@ -848,7 +848,7 @@ function Stack() {
             }}
             >
               {/* Top row: icon + name + percent */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: "1rem" }}>
                 <div style={{
                   width: 38, height: 38, borderRadius: 10,
                   background: "rgba(255,255,255,0.06)",
@@ -929,9 +929,9 @@ function Stack() {
 
 function Contact() {
   return (
-    <section id="contact" className="contact-section" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+    <section id="contact" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <GlowOrb x="50%" y="50%" color={ACCENT} size={500} />
-      <div className="contact-grid" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
         <div>
           <SectionLabel>Contact</SectionLabel>
           <SectionTitle>Let's Work<br /><span style={{ color: ACCENT }}>Together.</span></SectionTitle>
@@ -1117,7 +1117,7 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="footer-bar" style={{
+    <footer style={{
       padding: "2rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)",
       display: "flex", justifyContent: "space-between", alignItems: "center",
       fontSize: "0.7rem", color: "rgba(255,255,255,0.3)", letterSpacing: "0.08em", flexWrap: "wrap", gap: "1rem",
@@ -1163,12 +1163,11 @@ export default function App() {
         .overlay:hover { opacity: 1 !important; }
 
         @media (max-width: 768px) {
-        html, body { overflow-x: hidden !important; max-width: 100vw !important; }
-          section { max-width: 100vw !important; overflow-x: hidden !important; }
           /* Hero */
-          .hero-section { padding: 6rem 1.5rem 3rem !important; flex-direction: column !important; align-items: flex-start !important; width: 100% !important; overflow: hidden !important; }
-          .hero-content { max-width: 100% !important; width: 100% !important; }
-          .hero-lanyard { display: none !important; }}
+          .hero-section { padding: 6rem 1.5rem 3rem !important; flex-direction: column !important; }
+          .hero-content { max-width: 100% !important; }
+          .hero-lanyard { display: none !important; }
+
           /* About */
           .about-section { padding: 5rem 1.5rem !important; }
           .about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
