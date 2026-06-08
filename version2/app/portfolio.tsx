@@ -140,12 +140,39 @@ const projects: Project[] = [
   },
   {
     id: 6, category: "design",
-    title: "Dean's List Announcement",
+    title: "1st Semester Dean's Lister Awards (AY 2025-2026)",
     desc: "Description soon.",
     tags: ["Digital", "Poster", "Event"],
     tools: ["Canva", "Photoshop", "Illustrator"],
     img: "assets/projects/digital/9.png",
     accent: "#f59e0b",
+  },
+  {
+    id: 7, category: "design",
+    title: "Game Exhibit Poster",
+    desc: "Poster design for a game exhibit event. Bold, eye-catching layout with dynamic composition and vibrant colors. Drove high engagement and attendance.",
+    tags: ["Digital", "Posting", "Event"],
+    tools: ["Canva"],
+    img: "assets/projects/digital/10.png",
+    accent: "#0ea5e9",
+  },
+  {
+    id: 8, category: "design",
+    title: "Org Election Campaign:  A Regal Transformation",
+    desc: "A fantasy-inspired promotional graphic for a university student org election campaign. The design blends a Harry Potter-esque aesthetic with organizational branding, utilizing textured metallic typography, a multi-colored house crest, and dramatic theater curtains to capture voters' attention.",
+    tags: ["Digital", "Visual Design"],
+    tools: ["Canva"],
+    img: "assets/projects/digital/7.png",
+    accent: "#a855f7",
+  },
+  {
+    id: 9, category: "design",
+    title: "1st Semester Dean's Lister Awards (AY 2024-2025)",
+    desc: "This is the main title and cover graphic for the official presentation of the Dean's Lister Award ceremony at Universidad de Dagupan.",
+    tags: ["Digital", "Visual Design"],
+    tools: ["Canva"],
+    img: "assets/projects/digital/2.png",
+    accent: "#a855f7",
   }
 ];
 
@@ -590,39 +617,39 @@ function Projects() {
           </div>
         </div>
 
-        <div style={{ columns: 3, columnGap: "1rem" }}>
+        <div style={{ columns: 6, columnGap: "0.75rem" }}>
           {filtered.map((p, i) => (
             <div key={p.id} onClick={() => setModalIdx(i)}
               style={{
-                breakInside: "avoid", marginBottom: "1rem", borderRadius: 14, overflow: "hidden",
+                breakInside: "avoid", marginBottom: "0.75rem", borderRadius: 12, overflow: "hidden",
                 background: "rgba(255,255,255,0.03)", border: `1px solid ${p.accent}22`,
                 cursor: "pointer", transition: "all 0.3s", position: "relative",
               }}
               onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.borderColor = `${p.accent}55`; e.currentTarget.style.boxShadow = `0 16px 48px ${p.accent}18`; }}
               onMouseLeave={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.borderColor = `${p.accent}22`; e.currentTarget.style.boxShadow = "none"; }}
             >
-              <div style={{ width: "100%", height: [200,290,170,260,195][i % 5], background: "#111", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden" }}>
+              <div style={{ width: "100%", background: "#111", position: "relative", overflow: "hidden" }}>
                 {p.img ? (
-                  <img src={p.img} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <img src={p.img} alt={p.title} style={{ width: "100%", height: "auto", display: "block" }} />
                 ) : (
-                  <div style={{ color: `${p.accent}44`, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
-                    <Layers size={36} />
-                    <span style={{ fontSize: "0.65rem", letterSpacing: "0.12em", color: `${p.accent}66`, textTransform: "uppercase" }}>No Image</span>
+                  <div style={{ aspectRatio: "1/1", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, color: `${p.accent}44` }}>
+                    <Layers size={28} />
+                    <span style={{ fontSize: "0.58rem", letterSpacing: "0.12em", color: `${p.accent}66`, textTransform: "uppercase" }}>No Image</span>
                   </div>
                 )}
                 <div style={{
                   position: "absolute", inset: 0, background: `${p.accent}dd`,
                   display: "flex", alignItems: "center", justifyContent: "center",
                   opacity: 0, transition: "opacity 0.3s",
-                  fontFamily: "'Syne', sans-serif", fontSize: "0.75rem", fontWeight: 700,
+                  fontFamily: "'Syne', sans-serif", fontSize: "0.65rem", fontWeight: 700,
                   letterSpacing: "0.15em", textTransform: "uppercase", color: "#000",
-                }} className="overlay">↗ VIEW PROJECT</div>
+                }} className="overlay">↗ VIEW</div>
               </div>
-              <div style={{ padding: "0.9rem 1.1rem" }}>
-                <div style={{ fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase", color: p.accent, marginBottom: 4 }}>
+              <div style={{ padding: "0.6rem 0.75rem" }}>
+                <div style={{ fontSize: "0.52rem", letterSpacing: "0.18em", textTransform: "uppercase", color: p.accent, marginBottom: 3 }}>
                   {catConfig[p.category]?.label}
                 </div>
-                <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "0.85rem", color: "#fff" }}>{p.title}</div>
+                <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "0.72rem", color: "#fff", lineHeight: 1.3 }}>{p.title}</div>
               </div>
             </div>
           ))}
