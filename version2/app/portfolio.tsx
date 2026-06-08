@@ -654,6 +654,18 @@ function Projects() {
             </div>
           ))}
         </div>
+
+        <div style={{
+          textAlign: "center", marginTop: "2.5rem",
+          display: "flex", alignItems: "center", justifyContent: "center", gap: 12,
+        }}>
+          <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.1)" }} />
+          <span style={{
+            fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase",
+            color: "rgba(255,255,255,0.25)", fontFamily: "'Syne', sans-serif",
+          }}>More designs coming soon</span>
+          <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.1)" }} />
+        </div>
       </div>
 
       {activeProject && (
@@ -954,183 +966,75 @@ function Contact() {
   return (
     <section id="contact" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <GlowOrb x="50%" y="50%" color={ACCENT} size={500} />
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
-        <div>
-          <SectionLabel>Contact</SectionLabel>
-          <SectionTitle>Let's Work<br /><span style={{ color: ACCENT }}>Together.</span></SectionTitle>
-          <p style={{ color: "rgba(255,255,255,0.45)", lineHeight: 1.9, fontSize: "0.92rem", marginBottom: "2rem" }}>
-            Have a project, opportunity, or idea? I'm available for internships, freelance work, and creative collaborations.
-          </p>
+      <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+        <SectionLabel>Contact</SectionLabel>
+        <SectionTitle>Let's Work<br /><span style={{ color: ACCENT }}>Together.</span></SectionTitle>
+        <p style={{ color: "rgba(255,255,255,0.45)", lineHeight: 1.9, fontSize: "0.92rem", marginBottom: "3rem", maxWidth: 480, margin: "0 auto 3rem" }}>
+          Have a project, opportunity, or idea? I'm available for internships, freelance work, and creative collaborations.
+        </p>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.2rem", maxWidth: 780, margin: "0 auto" }}>
           {[
-            { icon: Mail,   val: "clarissagutlay.png@gmail.com" },
-            { icon: MapPin, val: "Philippines" },
-          ].map(({ icon: Icon, val }) => (
-            <div key={val} style={{ display: "flex", gap: 12, marginBottom: "1rem", alignItems: "center" }}>
-              <Icon size={16} color={ACCENT} />
-              <span style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.6)" }}>{val}</span>
-            </div>
-          ))}
-
-          <div style={{ display: "flex", gap: 8, marginTop: "2rem" }}>
-            <a
-              href="https://github.com/azianverse"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "flex", alignItems: "center", gap: 6, padding: "0.5em 1em",
-                border: "1px solid rgba(255,255,255,0.12)", borderRadius: 999,
-                color: "rgba(255,255,255,0.5)", fontSize: "0.7rem", letterSpacing: "0.1em",
-                textDecoration: "none", transition: "all 0.2s",
-              }}
-              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                e.currentTarget.style.borderColor = ACCENT;
-                e.currentTarget.style.color = ACCENT;
-              }}
-              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
-                e.currentTarget.style.color = "rgba(255,255,255,0.5)";
-              }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 499.368" style={{ width: 13, height: 13, fill: "currentColor", flexShrink: 0 }}>
-              <path fillRule="nonzero" d="M256.003 0C114.555 0 0 114.555 0 256.003c0 113.286 73.28 208.961 175.038 242.865 12.796 2.247 17.586-5.433 17.586-12.153 0-6.077-.309-26.225-.309-47.686-64.313 11.844-80.941-15.674-86.058-30.055-2.896-7.37-15.359-30.1-26.269-36.177-8.948-4.808-21.752-16.652-.31-16.961 20.168-.309 34.574 18.564 39.382 26.244 23.038 38.732 59.839 27.828 74.555 21.101 2.227-16.627 8.947-27.828 16.318-34.239-56.968-6.386-116.467-28.471-116.467-126.399 0-27.827 9.907-50.866 26.225-68.787-2.562-6.41-11.51-32.655 2.562-67.853 0 0 21.436-6.72 70.409 26.244 20.483-5.767 42.227-8.638 63.998-8.638 21.751 0 43.52 2.896 63.997 8.638 48.973-33.279 70.39-26.244 70.39-26.244 14.09 35.192 5.117 61.443 2.562 67.853 16.318 17.921 26.244 40.625 26.244 68.787 0 98.237-59.84 119.988-116.801 126.399 9.282 8.014 17.277 23.373 17.277 47.371 0 34.238-.309 61.751-.309 70.389 0 6.721 4.808 14.735 17.586 12.179C438.739 464.964 512 368.955 512 256.003 512 114.555 397.445 0 256.003 0z"/>
-              </svg>
-              GitHub
-            </a>
-            <a
-              href="https://www.behance.net/clrssgfx"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "flex", alignItems: "center", gap: 6, padding: "0.5em 1em",
-                border: "1px solid rgba(255,255,255,0.12)", borderRadius: 999,
-                color: "rgba(255,255,255,0.5)", fontSize: "0.7rem", letterSpacing: "0.1em",
-                textDecoration: "none", transition: "all 0.2s",
-              }}
-              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                e.currentTarget.style.borderColor = ACCENT;
-                e.currentTarget.style.color = ACCENT;
-              }}
-              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
-                e.currentTarget.style.color = "rgba(255,255,255,0.5)";
-              }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 333333" style={{ width: 13, height: 13, fill: "currentColor", flexShrink: 0 }}>
-              <path d="M96656 62252c9824 0 18671 854 26734 2608 8083 1685 14911 4559 20707 8459 5726 3913 10144 9122 13409 15620 3126 6435 4687 14512 4687 24077 0 10352-2331 18935-7037 25848-4748 6896-11646 12500-20898 16935 12622 3642 21937 10021 28187 19076 6244 9122 9246 20055 9246 32929 0 10415-2023 19329-5974 26882-4035 7622-9504 13797-16203 18559-6768 4811-14579 8329-23309 10606-8667 2264-17581 3451-26797 3451l-99407 2V62270l96667 6-12-26v2zm120854 16541h83133v20252l-83133-6V78787v6zm18474 152836c6128 5974 14911 8976 26378 8976 8201 0 15372-2093 21285-6256 5911-4165 9504-8575 10876-13140l35919 6c-5795 17889-14517 30598-26488 38281-11793 7683-26224 11585-42969 11585-11730 0-22200-1902-31643-5610-9437-3772-17311-9037-23955-15957-6441-6896-11516-15096-15102-24736-3520-9559-5327-20183-5327-31638 0-11128 1833-21482 5457-31053 3709-9645 8791-17895 15557-24872 6760-6970 14703-12500 24083-16535 9315-4041 19600-6065 30992-6065 12555 0 23555 2417 32998 7358 9376 4872 17120 11455 23173 19661 6065 8213 10352 17642 13023 28181 2669 10537 3581 21537 2848 33077l-107200-4c0 11646 3913 22791 10083 28699l12 43v-2zm46807-77972c-4811-5333-13085-8268-23037-8268-6522 0-11909 1100-16202 3315-4226 2203-7683 4933-10352 8201-2602 3254-4435 6773-5451 10470-1039 3581-1685 6896-1902 9770l66407-6c-978-10407-4559-18092-9437-23492l-24 12-2-2zm-192011-8606c7998 0 14635-1902 19838-5734 5205-3772 7683-10022 7683-18620 0-4742-848-8728-2541-11793-1746-3057-4041-5474-6963-7159-2872-1748-6114-2941-9947-3587-3708-707-7622-1033-11582-1033H45093v47904h45701l-12 24h-2zm2474 87287c4441 0 8667-394 12610-1317 4035-909 7622-2270 10606-4348 2996-2024 5541-4681 7350-8201 1833-3457 2669-7874 2669-13270 0-10537-3002-18098-8913-22663-5911-4504-13787-6705-23549-6705H45080v56423l48173-6v87z"/>
-              </svg>
-              Behance
-            </a>
-          </div>
-        </div>
-
-        {/* ── Contact Form ── */}
-        <form
-          style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
-          onSubmit={e => {
-            e.preventDefault();
-            const firstName = (document.getElementById("cf-firstname") as HTMLInputElement)?.value || "";
-            const lastName  = (document.getElementById("cf-lastname")  as HTMLInputElement)?.value || "";
-            const email     = (document.getElementById("cf-email")     as HTMLInputElement)?.value || "";
-            const subject   = (document.getElementById("cf-subject")   as HTMLInputElement)?.value || "Portfolio Inquiry";
-            const message   = (document.getElementById("cf-message")   as HTMLTextAreaElement)?.value || "";
-
-            const body = encodeURIComponent(
-              `From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`
-            );
-            window.location.href = `mailto:clarissagutlay.png@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-          }}
-        >
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>First Name</label>
-              <input
-                id="cf-firstname"
-                placeholder="John"
-                style={{
-                  background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
-                  color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none",
-                }}
-                onFocus={e => e.target.style.borderColor = ACCENT}
-                onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
-              />
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>Last Name</label>
-              <input
-                id="cf-lastname"
-                placeholder="Doe"
-                style={{
-                  background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
-                  color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none",
-                }}
-                onFocus={e => e.target.style.borderColor = ACCENT}
-                onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
-              />
-            </div>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>Email</label>
-            <input
-              id="cf-email"
-              type="email"
-              placeholder="john@example.com"
-              style={{
-                background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
-                color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none",
-              }}
-              onFocus={e => e.target.style.borderColor = ACCENT}
-              onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
-            />
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>Subject</label>
-            <input
-              id="cf-subject"
-              type="text"
-              placeholder="Project Inquiry"
-              style={{
-                background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
-                color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none",
-              }}
-              onFocus={e => e.target.style.borderColor = ACCENT}
-              onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
-            />
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            <label style={{ fontSize: "0.62rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>Message</label>
-            <textarea
-              id="cf-message"
-              rows={5}
-              placeholder="Tell me about your project..."
-              style={{
-                background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
-                color: "#fff", padding: "0.8em 1em", fontSize: "0.9rem", borderRadius: 8, outline: "none", resize: "none",
-              }}
-              onFocus={e => e.target.style.borderColor = ACCENT}
-              onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
-            />
-          </div>
-
-          <button
-            type="submit"
-            style={{
-              alignSelf: "flex-start", padding: "0.85em 2.2em",
-              background: `linear-gradient(135deg, ${ACCENT}, #ff1493)`,
-              color: "#000", fontSize: "0.78rem", letterSpacing: "0.15em", textTransform: "uppercase",
-              fontFamily: "'Syne', sans-serif", fontWeight: 700, cursor: "pointer", borderRadius: 6,
-              transition: "all 0.3s ease",
-              boxShadow: `0 0 20px ${ACCENT}40, 0 0 40px ${ACCENT}20`,
-              border: `1px solid ${ACCENT}80`,
+            {
+              icon: (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              ),
+              label: "EMAIL",
+              value: "clarissagutlay.png@gmail.com",
+              href: "mailto:clarissagutlay.png@gmail.com",
+              color: ACCENT,
+            },
+            {
+              icon: (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              ),
+              label: "GITHUB",
+              value: "azianverse",
+              href: "https://github.com/azianverse",
+              color: "#e0e0e0",
+            },
+            {
+              icon: (
+                <svg width="28" height="28" viewBox="0 0 333333 333333" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style={{ shapeRendering: "geometricPrecision" }}>
+                  <path d="M96656 62252c9824 0 18671 854 26734 2608 8083 1685 14911 4559 20707 8459 5726 3913 10144 9122 13409 15620 3126 6435 4687 14512 4687 24077 0 10352-2331 18935-7037 25848-4748 6896-11646 12500-20898 16935 12622 3642 21937 10021 28187 19076 6244 9122 9246 20055 9246 32929 0 10415-2023 19329-5974 26882-4035 7622-9504 13797-16203 18559-6768 4811-14579 8329-23309 10606-8667 2264-17581 3451-26797 3451l-99407 2V62270l96667 6-12-26v2zm120854 16541h83133v20252l-83133-6V78787v6zm18474 152836c6128 5974 14911 8976 26378 8976 8201 0 15372-2093 21285-6256 5911-4165 9504-8575 10876-13140l35919 6c-5795 17889-14517 30598-26488 38281-11793 7683-26224 11585-42969 11585-11730 0-22200-1902-31643-5610-9437-3772-17311-9037-23955-15957-6441-6896-11516-15096-15102-24736-3520-9559-5327-20183-5327-31638 0-11128 1833-21482 5457-31053 3709-9645 8791-17895 15557-24872 6760-6970 14703-12500 24083-16535 9315-4041 19600-6065 30992-6065 12555 0 23555 2417 32998 7358 9376 4872 17120 11455 23173 19661 6065 8213 10352 17642 13023 28181 2669 10537 3581 21537 2848 33077l-107200-4c0 11646 3913 22791 10083 28699l12 43v-2zm46807-77972c-4811-5333-13085-8268-23037-8268-6522 0-11909 1100-16202 3315-4226 2203-7683 4933-10352 8201-2602 3254-4435 6773-5451 10470-1039 3581-1685 6896-1902 9770l66407-6c-978-10407-4559-18092-9437-23492l-24 12-2-2zm-192011-8606c7998 0 14635-1902 19838-5734 5205-3772 7683-10022 7683-18620 0-4742-848-8728-2541-11793-1746-3057-4041-5474-6963-7159-2872-1748-6114-2941-9947-3587-3708-707-7622-1033-11582-1033H45093v47904h45701l-12 24h-2zm2474 87287c4441 0 8667-394 12610-1317 4035-909 7622-2270 10606-4348 2996-2024 5541-4681 7350-8201 1833-3457 2669-7874 2669-13270 0-10537-3002-18098-8913-22663-5911-4504-13787-6705-23549-6705H45080v56423l48173-6v87z"/>
+                </svg>
+              ),
+              label: "BEHANCE",
+              value: "clrssgfx",
+              href: "https://behance.net/clrssgfx",
+              color: "#1769ff",
+            },
+          ].map(({ icon, label, value, href, color }) => (
+            <a key={label} href={href} target="_blank" rel="noopener noreferrer" style={{
+              display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem",
+              padding: "2rem 1.5rem",
+              background: "rgba(255,255,255,0.03)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              borderRadius: 16, textDecoration: "none",
+              transition: "all 0.3s",
             }}
-            onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 0 30px ${ACCENT}60, 0 0 60px ${ACCENT}40`; e.currentTarget.style.transform = "translateY(-2px)"; }}
-            onMouseLeave={e => { e.currentTarget.style.boxShadow = `0 0 20px ${ACCENT}40, 0 0 40px ${ACCENT}20`; e.currentTarget.style.transform = "translateY(0)"; }}
-          >
-            Send Message →
-          </button>
-        </form>
+            onMouseEnter={e => { e.currentTarget.style.borderColor = `${color}55`; e.currentTarget.style.background = `${color}0d`; e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = `0 16px 40px ${color}18`; }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.background = "rgba(255,255,255,0.03)"; e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "none"; }}
+            >
+              <div style={{
+                width: 60, height: 60, borderRadius: 14,
+                background: `${color}18`, border: `1px solid ${color}30`,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                color,
+              }}>
+                {icon}
+              </div>
+              <div>
+                <div style={{ fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 6, fontFamily: "'Syne', sans-serif" }}>{label}</div>
+                <div style={{ fontSize: "0.82rem", color: "#fff", fontWeight: 500, wordBreak: "break-all" }}>{value}</div>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -1150,7 +1054,7 @@ function Footer() {
             <img src="/assets/logo.png" alt="CA logo" style={{ height: 26, width: "auto", display: "block" }} />
           </a>
       </div>
-      <div>© 2025 Clarissa Angel. All rights reserved.</div>
+      <div>© 2026 Clarissa Angel. All rights reserved.</div>
       <a href="assets/clarissa-angel-cv.pdf" download style={{
         display: "inline-flex", alignItems: "center", gap: 6,
         padding: "0.45em 1.1em",
