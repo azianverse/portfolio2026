@@ -246,7 +246,7 @@ function SectionTitle({ children, style }: SectionTitleProps) {
 
 function Hero() {
   return (
-    <section id="hero" style={{
+    <section id="hero" className="hero-section" style={{
       minHeight: "100vh", display: "flex", alignItems: "center",
       padding: "0 4rem", position: "relative", overflow: "hidden",
     }}>
@@ -262,7 +262,7 @@ function Hero() {
         whiteSpace: "nowrap", userSelect: "none", pointerEvents: "none", letterSpacing: "-0.05em",
       }}>CREATOR</div>
 
-      <div style={{ position: "relative", zIndex: 2, maxWidth: 780 }}>
+      <div className="hero-content" style={{ position: "relative", zIndex: 2, maxWidth: 780 }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8, marginBottom: "1.8rem",
           padding: "0.35em 1em", border: "2px solid rgba(255, 105, 180,0.3)",
@@ -348,7 +348,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative z-0 w-full h-150 flex justify-center items-center scale-100 origin-center">
+      <div className="hero-lanyard relative z-0 w-full h-150 flex justify-center items-center scale-100 origin-center">
         <Lanyard position={[0, 0, 12]} gravity={[0, -40, 0]} />
       </div>
 
@@ -369,9 +369,9 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" style={{ padding: "8rem 4rem", position: "relative", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section id="about" className="about-section" style={{ padding: "8rem 4rem", position: "relative", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <GlowOrb x="90%" y="20%" color={ACCENT3} size={400} />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center", maxWidth: 1200, margin: "0 auto" }}>
+      <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center", maxWidth: 1200, margin: "0 auto" }}>
         <div>
           <SectionLabel>About</SectionLabel>
           <SectionTitle>Generalist<br /><span style={{ color: ACCENT }}>Creator.</span></SectionTitle>
@@ -400,7 +400,7 @@ function About() {
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+        <div className="about-cards" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
           {[
             {
               icon: Palette, title: "Visual Design",
@@ -502,13 +502,13 @@ function ProjectModal({ project, onClose, onPrev, onNext }: ProjectModalProps) {
         position: "fixed", inset: 0, zIndex: 100,
         background: "rgba(0,0,0,0.88)", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem",
       }}>
-        <div style={{
+        <div className="modal-inner" style={{
           background: "#0a0a12", border: "1px solid rgba(255,255,255,0.08)",
           borderRadius: 20, width: "100%", maxWidth: 860,
           display: "grid", gridTemplateColumns: "1fr 1fr",
           overflow: "hidden", maxHeight: "90vh",
         }}>
-          <div style={{
+          <div className="modal-image" style={{
             background: "#111", display: "flex", alignItems: "center", justifyContent: "center",
             minHeight: 300, position: "relative", overflow: "hidden",
           }}>
@@ -592,7 +592,7 @@ function Projects() {
   const activeProject = modalIdx !== null ? filtered[modalIdx] : null;
 
   return (
-    <section id="projects" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+    <section id="projects" className="projects-section" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <GlowOrb x="80%" y="60%" color={ACCENT} size={350} />
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3rem", flexWrap: "wrap", gap: "1.5rem" }}>
@@ -617,7 +617,7 @@ function Projects() {
           </div>
         </div>
 
-        <div style={{ columns: 6, columnGap: "0.75rem" }}>
+        <div className="projects-grid" style={{ columns: 6, columnGap: "0.75rem" }}>
           {filtered.map((p, i) => (
             <div key={p.id} onClick={() => setModalIdx(i)}
               style={{
@@ -690,7 +690,7 @@ function Games() {
   };
 
   return (
-    <section id="games" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+    <section id="games" className="games-section" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <GlowOrb x="20%" y="50%" color="#00f5d4" size={450} />
       <GlowOrb x="85%" y="20%" color={ACCENT3} size={300} />
 
@@ -701,7 +701,7 @@ function Games() {
         </SectionTitle>
 
         {/* Bento grid — first card spans 2 cols, rest normal */}
-        <div style={{
+        <div className="games-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gridTemplateRows: "auto",
@@ -851,12 +851,12 @@ function Stack() {
   ];
 
   return (
-    <section id="stack" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.01)" }}>
+    <section id="stack" className="stack-section" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.01)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <SectionLabel>Tech Stack</SectionLabel>
         <SectionTitle><span style={{ color: ACCENT }}>Design</span> Tools<br />&amp; Proficiency.</SectionTitle>
 
-        <div style={{
+        <div className="stack-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(480px, 1fr))",
           gap: "1.2rem",
@@ -964,7 +964,7 @@ function Stack() {
 
 function Contact() {
   return (
-    <section id="contact" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+    <section id="contact" className="contact-section" style={{ padding: "8rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <GlowOrb x="50%" y="50%" color={ACCENT} size={500} />
       <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
         <SectionLabel>Contact</SectionLabel>
@@ -973,7 +973,7 @@ function Contact() {
           Have a project, opportunity, or idea? I'm available for internships, freelance work, and creative collaborations.
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.2rem", maxWidth: 780, margin: "0 auto" }}>
+        <div className="contact-cards" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.2rem", maxWidth: 780, margin: "0 auto" }}>
           {[
             {
               icon: (
@@ -1044,7 +1044,7 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer style={{
+    <footer className="footer-bar" style={{
       padding: "2rem 4rem", borderTop: "1px solid rgba(255,255,255,0.06)",
       display: "flex", justifyContent: "space-between", alignItems: "center",
       fontSize: "0.7rem", color: "rgba(255,255,255,0.3)", letterSpacing: "0.08em", flexWrap: "wrap", gap: "1rem",
@@ -1091,7 +1091,12 @@ export default function App() {
 
         @media (max-width: 768px) {
           /* Hero */
-          .hero-section { padding: 6rem 1.5rem 3rem !important; flex-direction: column !important; }
+          .hero-section {
+            padding: 7rem 1.5rem 3rem !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            min-height: auto !important;
+          }
           .hero-content { max-width: 100% !important; }
           .hero-lanyard { display: none !important; }
 
@@ -1102,11 +1107,16 @@ export default function App() {
 
           /* Projects */
           .projects-section { padding: 5rem 1.5rem !important; }
-          .projects-grid { columns: 1 !important; }
+          .projects-grid { columns: 2 !important; column-gap: 0.6rem !important; }
 
           /* Modal */
-          .modal-inner { grid-template-columns: 1fr !important; max-height: 95vh !important; overflow-y: auto !important; }
-          .modal-image { min-height: 200px !important; }
+          .modal-inner {
+            grid-template-columns: 1fr !important;
+            max-height: 92vh !important;
+            overflow-y: auto !important;
+            border-radius: 14px !important;
+          }
+          .modal-image { min-height: 220px !important; max-height: 50vw !important; }
 
           /* Games */
           .games-section { padding: 5rem 1.5rem !important; }
@@ -1119,13 +1129,30 @@ export default function App() {
 
           /* Contact */
           .contact-section { padding: 5rem 1.5rem !important; }
-          .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .contact-cards { grid-template-columns: 1fr !important; max-width: 100% !important; }
 
           /* Footer */
-          .footer-bar { padding: 2rem 1.5rem !important; flex-direction: column !important; align-items: flex-start !important; gap: 1rem !important; }
+          .footer-bar {
+            padding: 2rem 1.5rem !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 1rem !important;
+          }
 
           /* Section titles */
           h1, h2 { word-break: break-word; }
+        }
+
+        @media (max-width: 480px) {
+          /* Tighten hero on very small screens */
+          .hero-section { padding: 6rem 1.2rem 2.5rem !important; }
+          .hero-content h1 { font-size: clamp(2.8rem, 13vw, 4.5rem) !important; }
+
+          /* Projects: single col on very small */
+          .projects-grid { columns: 1 !important; }
+
+          /* About cards: single col */
+          .about-cards { grid-template-columns: 1fr !important; }
         }
       `}</style>
       <SplashCursor
