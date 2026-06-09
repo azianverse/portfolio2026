@@ -1098,12 +1098,12 @@ export default function App() {
         @media (max-width: 768px) {
           /* Hero */
           .hero-section {
-            padding: 7rem 1.5rem 3rem !important;
-            flex-direction: column !important;
-            align-items: flex-start !important;
+            padding: 7rem 1.5rem 4rem !important;
+            display: block !important;
             min-height: auto !important;
+            overflow: hidden !important;
           }
-          .hero-content { max-width: 100% !important; width: 100% !important; }
+          .hero-content { max-width: 100% !important; width: 100% !important; position: relative !important; z-index: 2 !important; }
           .hero-lanyard { display: none !important; width: 0 !important; height: 0 !important; }
 
           /* About */
