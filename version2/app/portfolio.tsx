@@ -844,10 +844,12 @@ function Stack() {
   }, []);
 
   const designTools = [
-    { name: "Canva",              icon: "https://www.google.com/s2/favicons?domain=canva.com&sz=64",          percent: 100 },
-    { name: "ibisPaint X",        icon: "https://upload.wikimedia.org/wikipedia/commons/8/80/IbisPaint_X_%28App_Icon%29.svg",      percent: 100 },
-    { name: "Adobe Illustrator",  icon: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",                  percent: 75  },
-    { name: "Photoshop",          icon: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg",               percent: 75  },
+    { name: "Canva",              icon: "https://www.google.com/s2/favicons?domain=canva.com&sz=64",                                              percent: 100 },
+    { name: "ibisPaint X",        icon: "https://upload.wikimedia.org/wikipedia/commons/8/80/IbisPaint_X_%28App_Icon%29.svg",                     percent: 100 },
+    { name: "CapCut",             icon: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Capcut-icon.svg",                                    percent: 100 },
+    { name: "Adobe Illustrator",  icon: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",                      percent: 75  },
+    { name: "Photoshop",          icon: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg",                        percent: 75  },
+    { name: "Figma",              icon: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",                                     percent: 50  },
   ];
 
   return (
@@ -858,7 +860,7 @@ function Stack() {
 
         <div className="stack-grid" style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(480px, 1fr))",
+          gridTemplateColumns: "repeat(3, 1fr)",
           gap: "1.2rem",
           marginTop: "3rem",
         }}>
@@ -931,12 +933,16 @@ function Stack() {
                   width: animated ? `${percent}%` : "0%",
                   background: percent === 100
                     ? `linear-gradient(90deg, ${ACCENT}, #ff1493)`
-                    : `linear-gradient(90deg, ${ACCENT3}, ${ACCENT})`,
+                    : percent >= 75
+                    ? `linear-gradient(90deg, ${ACCENT3}, ${ACCENT})`
+                    : `linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.4))`,
                   borderRadius: 999,
                   transition: `width 1.2s cubic-bezier(0.4, 0, 0.2, 1) ${i * 120}ms`,
                   boxShadow: percent === 100
                     ? `0 0 12px ${ACCENT}60`
-                    : `0 0 12px ${ACCENT3}40`,
+                    : percent >= 75
+                    ? `0 0 12px ${ACCENT3}40`
+                    : "none",
                 }} />
               </div>
 
@@ -946,10 +952,10 @@ function Stack() {
                 fontSize: "0.6rem",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: percent === 100 ? ACCENT : ACCENT3,
+                color: percent === 100 ? ACCENT : percent >= 75 ? ACCENT3 : "rgba(255,255,255,0.35)",
                 fontFamily: "'Syne', sans-serif",
               }}>
-                {percent === 100 ? "Expert · Daily Driver" : "Proficient · Regular Use"}
+                {percent === 100 ? "Expert · Daily Driver" : percent >= 75 ? "Proficient · Regular Use" : "Intermediate · Learning"}
               </div>
             </div>
           ))}
@@ -1097,8 +1103,8 @@ export default function App() {
             align-items: flex-start !important;
             min-height: auto !important;
           }
-          .hero-content { max-width: 100% !important; }
-          .hero-lanyard { display: none !important; }
+          .hero-content { max-width: 100% !important; width: 100% !important; }
+          .hero-lanyard { display: none !important; width: 0 !important; height: 0 !important; }
 
           /* About */
           .about-section { padding: 5rem 1.5rem !important; }
