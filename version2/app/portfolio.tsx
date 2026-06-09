@@ -382,7 +382,7 @@ function About() {
             Over 3 years, I've gone from crafting event branding for school organization to competing in hackathons, building full-stack systems, and exploring game asset pipelines. I don't fit in one box — and I think that's a superpower.
           </p>
 
-          <div style={{ display: "flex", gap: "2rem", marginTop: "2.5rem" }}>
+          <div className="about-stats" style={{ display: "flex", gap: "2rem", marginTop: "2.5rem" }}>
             {[
               { num: "100%", label: "Self-Taught" },
               { num: "100+", label: "Cups of Coffee" },
@@ -1109,7 +1109,8 @@ export default function App() {
           /* About */
           .about-section { padding: 5rem 1.5rem !important; }
           .about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
-          .about-cards { grid-template-columns: 1fr 1fr !important; }
+          .about-cards { grid-template-columns: 1fr 1fr !important; width: 100% !important; }
+          .about-stats { gap: 1.2rem !important; flex-wrap: wrap !important; }
 
           /* Projects */
           .projects-section { padding: 5rem 1.5rem !important; }
@@ -1145,8 +1146,9 @@ export default function App() {
             gap: 1rem !important;
           }
 
-          /* Section titles */
+          /* Section titles — prevent awkward word breaks */
           h1, h2 { word-break: break-word; }
+          h2 { font-size: clamp(1.8rem, 8vw, 2.8rem) !important; }
         }
 
         @media (max-width: 480px) {
@@ -1159,6 +1161,9 @@ export default function App() {
 
           /* About cards: single col */
           .about-cards { grid-template-columns: 1fr !important; }
+
+          /* Stats: tighten */
+          .about-stats { gap: 0.8rem !important; }
         }
       `}</style>
       <SplashCursor
