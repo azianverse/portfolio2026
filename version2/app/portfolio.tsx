@@ -130,15 +130,6 @@ const projects: Project[] = [
     accent: "#0ea5e9",
   },
   {
-    id: 5, category: "design",
-    title: "Department Marketing",
-    desc: "Description soon.",
-    tags: ["Digital", "Marketing", "Illustration"],
-    tools: ["ibisPaint X", "Canva"],
-    img: "assets/projects/digital/6.png",
-    accent: "#a855f7",
-  },
-  {
     id: 6, category: "design",
     title: "1st Semester Dean's Lister Awards (AY 2025-2026)",
     desc: "Description soon.",
