@@ -173,7 +173,52 @@ const projects: Project[] = [
     tools: ["Canva"],
     img: "assets/projects/digital/2.png",
     accent: "#a855f7",
-  }
+  },
+  {
+    id: 10, category: "print",
+    title: "SITE Majors Marketing",
+    desc: "Designed a cohesive, high-impact social media carousel campaign for the Universidad de Dagupan - School of Information Technology Education (SITE). The objective was to announce and promote the department's new academic specializations for the BSIT and BSCS programs to prospective students.",
+    tags: ["Digital", "Marketing", "Social Graphics"],
+    tools: ["Canva", "Photoshop"],
+    img: "assets/projects/digital/11.png",
+    accent: "#0ea5e9",
+  },
+  {
+    id: 11, category: "design",
+    title: "SITE Presidential Scholarship Campaign",
+    desc: "Designed a high-conversion promotional banner for the School of Information Technology Education (SITE) at Universidad de Dagupan. The project aimed to broadcast the university’s 'Presidential Scholarship' pre-qualifying exams for the Academic Year 2026–2027, targeting incoming freshmen.",
+    tags: ["Digital", "Marketing", "Social Graphics"],
+    tools: ["Canva", "Photoshop"],
+    img: "assets/projects/digital/12.png",
+    accent: "#0ea5e9",
+  },
+  {
+    id: 12, category: "print",
+    title: "Platform Technology Book Cover",
+    desc: "My main goal for this project was to design an IT textbook cover that speaks to modern students and educators. In collaboration with Ana Victoria Alentajan, the final concept for 'Platform Technologies' bridges traditional academic standards with fast-paced, tech-driven visuals.",
+    tags: ["Print", "Branding"],
+    tools: ["Illustrator", "Photoshop"],
+    img: "assets/projects/print/2.png",
+    accent: "#f59e0b",
+  },
+  {
+    id: 13, category: "print",
+    title: "60th Birthday Invitation Design",
+    desc: "A elegant invitation design for a 60th birthday celebration.",
+    tags: ["Print", "Branding"],
+    tools: ["Illustrator", "Photoshop"],
+    img: "assets/projects/print/2.jpg",
+    accent: "#f59e0b",
+  },
+  {
+    id: 14, category: "design",
+    title: "PesoTrack — Pitch Deck Design",
+    desc: "Designed a comprehensive 9-slide pitch deck for 'PesoTrack,' a conceptual civic transparency application aimed at mapping public bills and taxes directly to government spending. The core design challenge was translating dense, complex fiscal data and social problems into a highly scannable, engaging startup pitch format.",
+    tags: ["Digital", "Marketing", "Social Graphics"],
+    tools: ["Illustrator", "Canva"],
+    img: "assets/projects/digital/13.png",
+    accent: "#f59e0b",
+  },
 ];
 
 // ── Game projects — imported from data file and exported so game detail pages can import them ─────────────
@@ -663,7 +708,7 @@ function Projects() {
           <span style={{
             fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase",
             color: "rgba(255,255,255,0.25)", fontFamily: "'Syne', sans-serif",
-          }}>More designs coming soon</span>
+          }}>Selected designs only (More Soon)</span>
           <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.1)" }} />
         </div>
       </div>
