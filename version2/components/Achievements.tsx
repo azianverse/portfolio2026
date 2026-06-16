@@ -79,7 +79,7 @@ export const achievements: Achievement[] = [
     gallery: [null, null, null, null],
     accent: ACCENT2,
     icon: "shield",
-    organizer: "Department of ICT",
+    organizer: "Department of Information and Communications Technology (DICT)",
   },
 
   // ── School Achievements ────────────────────────────────────────────────
