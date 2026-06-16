@@ -74,7 +74,7 @@ export const achievements: Achievement[] = [
     placeRank: 0,
     date: "2024",
     shortDesc: "Applied security thinking and design skills to real-world government tech challenges.",
-    desc: "Hack4Gov was a government-focused hackathon that challenged participants to solve public-sector problems through technology. I applied my cybersecurity knowledge and UI design skills to craft a solution that prioritized both usability and data integrity. Working alongside other IT students on an actual government use-case was a defining experience that sharpened my systems thinking.",
+    desc: "Competing in Hack4Gov 2024 was an absolute whirlwind, and walking away with a Top 6 finish at the regional level is something I’m incredibly proud of. Organized by the DICT and NCERT, it wasn't just a standard hackathon—it was a high-stakes regional CTF that forced us to face real-world cyber threats in real-time. My team and I spent hours diving deep into complex web exploits, cryptography, and digital forensics against some of the best student talents in the region. It was the ultimate test of my cybersecurity knowledge, pushing me to think about how data integrity and usability connect in a high-pressure environment. Collaborating on actual government use-cases completely changed how I look at secure systems design, and breaking into the top tier of our region made every single hour of intense problem-solving totally worth it.",
     thumbnail: null,
     gallery: [null, null, null, null],
     accent: ACCENT2,
