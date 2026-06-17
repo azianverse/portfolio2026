@@ -88,7 +88,7 @@ export const achievements: Achievement[] = [
     category: "external",
     title: "Hack4Gov",
     event: "Hack4Gov Competition",
-    place: "Participant",
+    place: "Top 6 (Regional Level)",
     placeRank: 0,
     date: "2025",
     shortDesc: "Applied security thinking and design skills to real-world government tech challenges.",
