@@ -9,6 +9,24 @@ import { Trophy, Shield, Star, Award, ChevronRight, Users } from "lucide-react";
 
 import hackathonHero from "../public/assets/achievements/jdq-thumbnail.png";
 import hackathonGallery1 from "../public/assets/achievements/jdq-img1.png";
+import hackathonGallery2 from "../public/assets/achievements/jdq-bts1.jpg";
+import hackathonGallery3 from "../public/assets/achievements/jdq-bts2.jpg";
+import hackathonGallery4 from "../public/assets/achievements/jdq-bts3.jpg";
+import hackathonGallery5 from "../public/assets/achievements/jdq-bts4.jpg";
+import hackathonGallery6 from "../public/assets/achievements/jdq-bts5.png";
+import hackathonGallery7 from "../public/assets/achievements/jdq-bts6.png";
+import h4govThumbnail from "../public/assets/achievements/h4g-thumbnail.png";
+import h4govGallery1 from "../public/assets/achievements/h4g-img1.png";
+import h4govGallery2 from "../public/assets/achievements/h4g-img2.png";
+import h4govGallery3 from "../public/assets/achievements/h4g-img3.png";
+import h4govGallery4 from "../public/assets/achievements/h4g-img4.png";
+import h4govGallery5 from "../public/assets/achievements/h4g-img5.png";
+import h4govGallery6 from "../public/assets/achievements/h4g-img6.png";
+import aseanConference from "../public/assets/achievements/asean-thumbnail.jpg";
+import aseanConferenceGallery1 from "../public/assets/achievements/asean-img1.png";
+import aseanConferenceGallery2 from "../public/assets/achievements/asean-img2.png";
+import aseanConferenceGallery3 from "../public/assets/achievements/asean-img3.png";
+import aseanConferenceGallery4 from "../public/assets/achievements/asean-img4.png";
 
 // ── PHOTOS [INTERNAL] ────────────────────────────────────────────────────────
 
@@ -57,7 +75,7 @@ export const achievements: Achievement[] = [
     shortDesc: "Competed in a regional hackathon, developing a civic tech solution under time pressure.",
     desc: "This was my first taste of competitive problem-solving at a regional level. Our team tackled a real-world civic challenge — designing and prototyping a digital solution within 24 hours. I led the UI/UX design and contributed to the frontend implementation. The pressure was immense, but crossing that finish line taught me more about teamwork and rapid ideation than any classroom ever could.",
     thumbnail: hackathonHero.src,
-    gallery: [hackathonHero.src, hackathonGallery1.src, null, null],
+    gallery: [hackathonHero.src, hackathonGallery1.src, hackathonGallery2.src, hackathonGallery3.src, hackathonGallery4.src, hackathonGallery5.src, hackathonGallery6.src, hackathonGallery7.src],
     accent: "#f59e0b",
     icon: "trophy",
     organizer: "Web3 Pangasinan, Viction Philippines, Makerspace Innovhub OPC",
@@ -75,16 +93,35 @@ export const achievements: Achievement[] = [
     date: "2024",
     shortDesc: "Applied security thinking and design skills to real-world government tech challenges.",
     desc: "Competing in Hack4Gov 2024 was an absolute whirlwind, and walking away with a Top 6 finish at the regional level is something I’m incredibly proud of. Organized by the DICT and NCERT, it wasn't just a standard hackathon—it was a high-stakes regional CTF that forced us to face real-world cyber threats in real-time. My team and I spent hours diving deep into complex web exploits, cryptography, and digital forensics against some of the best student talents in the region. It was the ultimate test of my cybersecurity knowledge, pushing me to think about how data integrity and usability connect in a high-pressure environment. Collaborating on actual government use-cases completely changed how I look at secure systems design, and breaking into the top tier of our region made every single hour of intense problem-solving totally worth it.",
-    thumbnail: null,
-    gallery: [null, null, null, null],
+    thumbnail: h4govThumbnail.src,
+    gallery: [h4govGallery1.src, h4govGallery2.src, h4govGallery3.src, h4govGallery4.src, h4govGallery5.src, h4govGallery6.src, h4govThumbnail.src],
     accent: ACCENT2,
     icon: "shield",
     organizer: "Department of Information and Communications Technology (DICT)",
   },
+  {
+    id: 3,
+    slug: "asean-conference",
+    category: "external",
+    title: "2025 ASEAN Conference",
+    event: "Timpuyog: 2025 ASEAN Conference for Region 1 Higher Education Institutions",
+    place: "2nd Runner-Up",
+    placeRank: 3,
+    date: "September 29, 2025",
+    shortDesc: "Presented an SDG-focused tech solution at a regional conference, earning 3rd place.",
+    desc: "Participating in the 2025 ASEAN Conference for Region 1 Higher Education Institutions was an unforgettable experience. Our team, JuanDerQuest, developed an innovative tech solution aligned with the Sustainable Development Goals (SDGs) and presented it to a panel of experts and peers from across Southeast Asia. The competition was fierce, with brilliant minds from the region showcasing their ideas. Securing 3rd place was a proud moment that validated our hard work and creativity. It also reinforced my belief in the power of technology to drive positive change on a global scale.",
+    thumbnail: aseanConference.src,
+    gallery: [aseanConferenceGallery1.src, aseanConferenceGallery2.src, aseanConferenceGallery3.src, aseanConferenceGallery4.src],
+    accent: "#22c55e",
+    icon: "star",
+    organizer: "CHED RO1, in partnership with Pangasinan State University (PSU)",
+    team: ["JuanDerQuest"],
+    mentor: "Mr. Marc France Cabiles",
+  },
 
   // ── School Achievements ────────────────────────────────────────────────
   {
-    id: 3,
+    id: 4,
     slug: "graphic-artist",
     category: "school",
     title: "Graphic Artist",
