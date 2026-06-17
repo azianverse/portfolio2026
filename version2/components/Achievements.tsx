@@ -98,6 +98,8 @@ export const achievements: Achievement[] = [
     accent: ACCENT2,
     icon: "shield",
     organizer: "Department of Information and Communications Technology (DICT)",
+    team: ["CyberOwls Beta"],
+    mentor: "Mr. Marc France Cabiles",
   },
   {
     id: 3,
