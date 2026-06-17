@@ -91,7 +91,7 @@ export const achievements: Achievement[] = [
     place: "Top 6 (Regional Level)",
     placeRank: 0,
     date: "2025",
-    shortDesc: "Applied security thinking and design skills to real-world government tech challenges.",
+    shortDesc: "Secured a Top 6 regional spot by solving complex government cybersecurity use-cases and CTF challenges.",
     desc: "Competing in Hack4Gov 2025 was an absolute whirlwind, and walking away with a Top 6 finish at the regional level is something I’m incredibly proud of. Organized by the DICT and NCERT, it wasn't just a standard hackathon—it was a high-stakes regional CTF that forced us to face real-world cyber threats in real-time. My team and I spent hours diving deep into complex web exploits, cryptography, and digital forensics against some of the best student talents in the region. It was the ultimate test of my cybersecurity knowledge, pushing me to think about how data integrity and usability connect in a high-pressure environment. Collaborating on actual government use-cases completely changed how I look at secure systems design, and breaking into the top tier of our region made every single hour of intense problem-solving totally worth it.",
     thumbnail: h4govThumbnail.src,
     gallery: [h4govGallery1.src, h4govGallery2.src, h4govGallery3.src, h4govGallery4.src, h4govGallery5.src, h4govGallery6.src, h4govThumbnail.src],
