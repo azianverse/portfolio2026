@@ -461,7 +461,7 @@ function About() {
             },
             {
               icon: Code2, title: "Software Dev",
-              desc: "Laravel, PHP, full-stack heritage apps",
+              desc: "React, TypeScript, PHP, and Java full-stack applications.",
               color: ACCENT,
               glowColor: "330 100 70",
               colors: [ACCENT, "#ff1493", "#c026d3"],
