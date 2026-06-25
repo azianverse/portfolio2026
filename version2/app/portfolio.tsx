@@ -216,7 +216,7 @@ const projects: Project[] = [
 export const gameProjects: GameProject[] = importedGameProjects;
 
 const techStack: TechStackItem[] = [
-  { name: "Adobe Illustrator", icon: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg", cat: "Design" },
+  { name: "Illustrator", icon: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg", cat: "Design" },
   { name: "Photoshop", icon: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg", cat: "Design" },
   { name: "Canva", icon: "https://www.google.com/s2/favicons?domain=canva.com&sz=64", cat: "Design" },
   { name: "ibisPaint X", icon: "https://www.google.com/s2/favicons?domain=ibispaint.com&sz=64", cat: "Design" },
@@ -883,7 +883,7 @@ function Stack() {
     { name: "Canva",              icon: "https://www.google.com/s2/favicons?domain=canva.com&sz=64",                                              percent: 100 },
     { name: "ibisPaint X",        icon: "https://upload.wikimedia.org/wikipedia/commons/8/80/IbisPaint_X_%28App_Icon%29.svg",                     percent: 100 },
     { name: "CapCut",             icon: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Capcut-icon.svg",                                    percent: 100 },
-    { name: "Adobe Illustrator",  icon: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",                      percent: 75  },
+    { name: "Illustrator",        icon: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",                      percent: 75  },
     { name: "Photoshop",          icon: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg",                        percent: 75  },
     { name: "Figma",              icon: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",                                     percent: 50  },
   ];
